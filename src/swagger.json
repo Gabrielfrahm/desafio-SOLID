@@ -1,0 +1,50 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Swagger Api desaofio",
+      "description": "Swagger Api desaofion",
+      "version": "1.0.0",
+      "contact": {
+        "email": "gabriel@teste.com"
+      }
+    },
+    "paths" : {
+      "/users": {
+        "post" :{
+          "tags": ["user"],
+          "summary": "Create a user",
+          "description": "Create a user",
+          "requestBody" : {
+            "content": {
+              "application/json" : {
+                "schema" : {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    }
+                  },
+                  "example" : {
+                    "name": "Gabriel",
+                    "email": "gabriel@teste.com"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description" : "created"
+            },
+            "400": {
+              "description" : "User already exists"
+            }
+          }
+        }
+      }
+    }
+  }
+  
